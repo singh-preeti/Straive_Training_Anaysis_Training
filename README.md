@@ -7,4 +7,6 @@ https://viso.ai/computer-vision/opencv/
 https://pythongeeks.org/python-opencv-text-detection-and-extraction/
 ******************************Threshold
 https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html
+*****************************OCR Python
+https://www.datacamp.com/tutorial/optical-character-recognition-ocr-in-python-with-pytesseract
 
