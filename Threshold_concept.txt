@@ -1,0 +1,65 @@
+Threshold: Thresholding is a type of image segmentation, where we change the pixels of an image to make the image easier to analyze. In thresholding, we convert an image from colour or grayscale into a binary image, i.e., one that is simply black and white.
+Thresh Binary:The thresholded pixels can have a maximum value of 255. cv2. THRESH_BINARY: According to the thresholding type, it thresholds the pixels using a binary approach, putting values below the threshold to 0 and those that are equal to or higher than the threshold to the maximum specified value.
+Thresh OTSU :Otsu's method chooses a threshold that minimizes the intraclass variance of the thresholded black and white pixels. The global threshold T can be used with imbinarize to convert a grayscale image to a binary image.
+
+Simple Thresholding:
+Here, the matter is straight-forward. For every pixel, the same threshold value is applied. If the pixel value is smaller than the threshold, it is set to 0, otherwise it is set to a maximum value. The function cv.threshold is used to apply the thresholding. The first argument is the source image, which should be a grayscale image. The second argument is the threshold value which is used to classify the pixel values. The third argument is the maximum value which is assigned to pixel values exceeding the threshold. OpenCV provides different types of thresholding which is given by the fourth parameter of the function. Basic thresholding as described above is done by using the type cv.THRESH_BINARY. All simple thresholding types are:
+cv.THRESH_BINARY
+cv.THRESH_BINARY_INV
+cv.THRESH_TRUNC
+cv.THRESH_TOZERO
+cv.THRESH_TOZERO_INV
+
+import cv2 as cv
+import numpy as np
+from matplotlib import pyplot as plt
+img = cv.imread('gradient.png', cv.IMREAD_GRAYSCALE)
+assert img is not None, "file could not be read, check with os.path.exists()"
+ret,thresh1 = cv.threshold(img,127,255,cv.THRESH_BINARY)
+ret,thresh2 = cv.threshold(img,127,255,cv.THRESH_BINARY_INV)
+ret,thresh3 = cv.threshold(img,127,255,cv.THRESH_TRUNC)
+ret,thresh4 = cv.threshold(img,127,255,cv.THRESH_TOZERO)
+ret,thresh5 = cv.threshold(img,127,255,cv.THRESH_TOZERO_INV)
+titles = ['Original Image','BINARY','BINARY_INV','TRUNC','TOZERO','TOZERO_INV']
+images = [img, thresh1, thresh2, thresh3, thresh4, thresh5]
+for i in range(6):
+plt.subplot(2,3,i+1),plt.imshow(images[i],'gray',vmin=0,vmax=255)
+plt.title(titles[i])
+plt.xticks([]),plt.yticks([])
+plt.show()
+
+Otsu's Binarization:
+In global thresholding, we used an arbitrary chosen value as a threshold. In contrast, Otsu's method avoids having to choose a value and determines it automatically.
+Consider an image with only two distinct image values (bimodal image), where the histogram would only consist of two peaks. A good threshold would be in the middle of those two values. Similarly, Otsu's method determines an optimal global threshold value from the image histogram.
+In order to do so, the cv.threshold() function is used, where cv.THRESH_OTSU is passed as an extra flag. The threshold value can be chosen arbitrary. The algorithm then finds the optimal threshold value which is returned as the first output.
+Check out the example below. The input image is a noisy image. In the first case, global thresholding with a value of 127 is applied. In the second case, Otsu's thresholding is applied directly. In the third case, the image is first filtered with a 5x5 gaussian kernel to remove the noise, then Otsu thresholding is applied. See how noise filtering improves the result.
+
+import cv2 as cv
+import numpy as np
+from matplotlib import pyplot as plt
+img = cv.imread('noisy2.png', cv.IMREAD_GRAYSCALE)
+assert img is not None, "file could not be read, check with os.path.exists()"
+# global thresholding
+ret1,th1 = cv.threshold(img,127,255,cv.THRESH_BINARY)
+# Otsu's thresholding
+ret2,th2 = cv.threshold(img,0,255,cv.THRESH_BINARY+cv.THRESH_OTSU)
+# Otsu's thresholding after Gaussian filtering
+blur = cv.GaussianBlur(img,(5,5),0)
+ret3,th3 = cv.threshold(blur,0,255,cv.THRESH_BINARY+cv.THRESH_OTSU)
+
+# plot all the images and their histograms
+images = [img, 0, th1,
+img, 0, th2,
+blur, 0, th3]
+titles = ['Original Noisy Image','Histogram','Global Thresholding (v=127)',
+'Original Noisy Image','Histogram',"Otsu's Thresholding",
+'Gaussian filtered Image','Histogram',"Otsu's Thresholding"]
+for i in range(3):
+plt.subplot(3,3,i*3+1),plt.imshow(images[i*3],'gray')
+plt.title(titles[i*3]), plt.xticks([]), plt.yticks([])
+plt.subplot(3,3,i*3+2),plt.hist(images[i*3].ravel(),256)
+plt.title(titles[i*3+1]), plt.xticks([]), plt.yticks([])
+plt.subplot(3,3,i*3+3),plt.imshow(images[i*3+2],'gray')
+plt.title(titles[i*3+2]), plt.xticks([]), plt.yticks([])
+plt.show()
+
