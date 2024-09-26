@@ -4,3 +4,5 @@ https://blog.tara.ai/software-development-life-cycle/
 https://www.cprime.com/resources/what-is-agile-what-is-scrum/
 #Extream Programming
 https://www.geeksforgeeks.org/software-engineering-extreme-programming-xp/
+#STLC
+https://www.softwaretestingmaterial.com/stlc-software-testing-life-cycle/
