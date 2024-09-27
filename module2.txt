@@ -8,3 +8,5 @@ https://www.geeksforgeeks.org/software-engineering-extreme-programming-xp/
 https://www.softwaretestingmaterial.com/stlc-software-testing-life-cycle/
 #Level of testing
 https://www.softwaretestingclass.com/system-testing-what-why-how/
+#Bug Lifecycle
+https://www.browserstack.com/guide/bug-life-cycle-in-testing
