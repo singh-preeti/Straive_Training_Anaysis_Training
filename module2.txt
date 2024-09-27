@@ -10,3 +10,5 @@ https://www.softwaretestingmaterial.com/stlc-software-testing-life-cycle/
 https://www.softwaretestingclass.com/system-testing-what-why-how/
 #Bug Lifecycle
 https://www.browserstack.com/guide/bug-life-cycle-in-testing
+#Tracebility Matrix
+https://www.guru99.com/traceability-matrix.html
