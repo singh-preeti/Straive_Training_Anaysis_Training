@@ -11,3 +11,5 @@ https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html
 https://www.datacamp.com/tutorial/optical-character-recognition-ocr-in-python-with-pytesseract
 ****************************LLM GenAI*************************************************
 https://www.cloudflare.com/learning/ai/what-is-large-language-model/
+***************************MOngoDb Shell Command****************************************
+https://www.mongodb.com/developer/products/mongodb/cheat-sheet/
