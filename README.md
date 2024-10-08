@@ -15,3 +15,5 @@ https://www.cloudflare.com/learning/ai/what-is-large-language-model/
 https://www.mongodb.com/developer/products/mongodb/cheat-sheet/
 **************************TypeScript Basics*********************************************
 https://www.typescripttutorial.net/typescript-tutorial/typescript-hello-world/
+**************************Devops*******************************************
+https://www.edureka.co/blog/what-is-devops/
