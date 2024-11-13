@@ -17,3 +17,7 @@ https://www.mongodb.com/developer/products/mongodb/cheat-sheet/
 https://www.typescripttutorial.net/typescript-tutorial/typescript-hello-world/
 **************************Devops*******************************************
 https://www.edureka.co/blog/what-is-devops/
+
+batch2-----Day 1
+https://www.datacamp.com/blog/what-is-data-analysis-expert-guide
+batch 2
