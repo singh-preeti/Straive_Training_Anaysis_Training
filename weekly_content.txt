@@ -1,4 +1,16 @@
 Week 1 & 2 Content
+Identify data & analytics solution approach, Creating a solution architecture, , Hands-on exercise
+Data Storytelling: Understanding Different Types Of Data Visualizations, Information Design Principles, How to create a data story
+"
+Design: Introduction to Figma, Overview of wireframing data applications
+"
+Project Management: Project Management Life Cycle, Team management, Agile & Waterfall methodology
+"Work on the Case study covering the below areas
+-Identify problem statement
+-Hypothesis Formulation
+-Exploratory data analysis using excel
+-Present the insights as a data story"
+
 Statistical Analysis: Application of Hypothesis testing & Confidence intervals, Z-tests, t-tests, chi-square tests, ANOVA
 NLP: Text Classification, Doc Clustering, Sentiment analysis, OneShot/Few Shot learning - Hands-on Exercise
 Computer Vision : Object detection & Recognition, Segmentation, OCR Modeling- Hands-on Exercise 
